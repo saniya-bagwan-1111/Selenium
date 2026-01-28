@@ -1,4 +1,4 @@
-package com.seleniumlearning.selenium_e2e_project;
+package com.seleniumlearning.e2eTest;
 
 import java.time.Duration;
 import java.util.List;
@@ -18,7 +18,7 @@ public class LoginPage {
 	
 	public static void main(String[] args) throws InterruptedException 
 	{
-//		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		String productName="ADIDAS ORIGINAL";
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();

@@ -27,9 +27,16 @@ public class AbstractComponent {
 
 	public void waitForElementToAppear(By findBy)
 	{
-		WebDriverWait expWait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait expWait=new WebDriverWait(driver, Duration.ofSeconds(15));
 		expWait.until(ExpectedConditions.visibilityOfElementLocated(findBy));//wait until all elements are loaded on page 
 	}
+	
+	public void waitForWebElementToAppear(WebElement webElement)
+	{
+		WebDriverWait expWait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		expWait.until(ExpectedConditions.visibilityOf(webElement));
+	}
+	
 	
 	public void waitForElementToDisable(WebElement loadSpinner)
 	{
@@ -40,11 +47,22 @@ public class AbstractComponent {
 	@FindBy(css="[routerlink*='cart']")
 	WebElement cartButton;
 	
+	
+	@FindBy(css="[routerlink*='myorder']")
+	WebElement orderHeaderButton;
+	
 	public CartPage goToCartPage()
 	{
 		cartButton.click();
 		return new CartPage(driver);
 		
 	}
+	public OrderPage goToOrdersPage()
+	{
+		orderHeaderButton.click();
+		return new OrderPage(driver);
+		
+	}
+
 
 }

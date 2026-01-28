@@ -1,0 +1,46 @@
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven-specific (if you use Maven)
+target/
+pom.xml.tag
+pom.xml.next
+pom.xml.bak
+release.properties
+
+# Gradle-specific (if you use Gradle)
+.gradle/
+build/
+out/
+
+# Eclipse-specific
+.classpath
+.project
+.settings/
+# External tool builders
+.externalToolBuilders/
+# Locally stored Eclipse launch configurations
+*.launch
+# Eclipse workspace metadata
+.metadata
+
+# IntelliJ IDEA-specific
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# NetBeans-specific
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle-properties
+
+# Operating System Files
+.DS_Store # macOS
+Thumbs.db # Windows

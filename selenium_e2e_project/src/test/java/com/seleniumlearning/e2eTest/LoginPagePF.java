@@ -1,4 +1,4 @@
-package com.seleniumlearning.selenium_e2e_project;
+package com.seleniumlearning.e2eTest;
 
 import java.time.Duration;
 import java.util.List;
