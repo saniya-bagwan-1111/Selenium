@@ -1,5 +1,6 @@
 package com.seleniumlearning.testComponents;
 
+import java.awt.Dimension;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -43,10 +45,15 @@ public class BaseTest {
 		
 		//OPtion 2- user value from cmd:  mvn test -Pregression -Dbrowser=chrome
 		String browserName=System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
-		if(browserName.equalsIgnoreCase("chrome"))
+		if(browserName.contains("chrome"))
 		{
+			ChromeOptions options=new ChromeOptions();
+			if(browserName.contains("headless")) {
+			options.addArguments("headless");
+			}
 			WebDriverManager.chromedriver().setup();
-			 driver= new ChromeDriver();
+			 driver= new ChromeDriver(options);
+			 driver.manage().window().setSize(new org.openqa.selenium.Dimension(1440, 900));//help to run in full screen
 		}
 		else if(browserName.equalsIgnoreCase("firefox"))
 		{	
